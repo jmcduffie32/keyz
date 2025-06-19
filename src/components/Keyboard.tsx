@@ -37,6 +37,8 @@ export const Keyboard = () => {
           onMouseDown={() => handleKeyDown(note)}
           onMouseUp={() => handleKeyUp(note)}
           onMouseLeave={() => handleKeyUp(note)}
+          onTouchStart={e => { e.preventDefault(); handleKeyDown(note); }}
+          onTouchEnd={e => { e.preventDefault(); handleKeyUp(note); }}
         ></div>
       ))}
     </div>
